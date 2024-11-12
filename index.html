@@ -1,1 +1,333 @@
-hello world!
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>CodePen - Full-Screen Responsive Image Slider</title>
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css'>
+  <link rel="stylesheet" href="./style.css">
+<style>
+  @import url("https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Lexend", sans-serif;
+  background-color: #362a2b;
+  color: #e5ebf3;
+}
+
+.slider {
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.4s ease-in-out;
+}
+
+.slide.current {
+  opacity: 1;
+}
+
+
+.slide:first-child {
+  background: url("001_383_cumberland_26_476.jpeg") no-repeat
+    center top/cover;
+}
+
+.slide:nth-child(2) {
+  background: url("002_383_cumberland_27_846.jpeg") no-repeat
+    center top/cover;
+}
+
+.slide:nth-child(3) {
+  background: url("003_383_cumberland_28_618.jpeg") no-repeat
+    center top/cover;
+}
+
+.slide:nth-child(4) {
+  background: url("004_383_cumberland_15_928.jpeg") no-repeat
+    center top/cover;
+}
+
+  .slide:nth-child(5) {
+  background: url("005_383_cumberland_12_641.jpeg") no-repeat
+    center top/cover;
+}
+
+  .slide:nth-child(6) {
+  background: url("006_383_cumberland_4_287.jpeg") no-repeat
+    center top/cover;
+}
+
+  .slide:nth-child(7) {
+  background: url("007_383_cumberland_5_475.jpeg") no-repeat
+    center top/cover;
+}
+
+  .slide:nth-child(8) {
+  background: url("008_383_cumberland_6_106.jpeg") no-repeat
+    center top/cover;
+}
+
+  .slide:nth-child(9) {
+  background: url("009_383_cumberland_8_42.jpeg") no-repeat
+    center top/cover;
+}
+
+  .slide:nth-child(10) {
+  background: url("010_383_cumberland_10_698.jpeg") no-repeat
+    center top/cover;
+}
+
+  .slide:nth-child(11) {
+  background: url("011_383_cumberland_11_469.jpeg") no-repeat
+    center top/cover;
+}
+
+    .slide:nth-child(12) {
+  background: url("012_383_cumberland_9_619.jpeg") no-repeat
+    center top/cover;
+}
+
+    .slide:nth-child(13) {
+  background: url("013_383_cumberland_7_13.jpeg") no-repeat
+    center top/cover;
+}
+
+    .slide:nth-child(14) {
+  background: url("014_383_cumberland_13_37.jpeg") no-repeat
+    center top/cover;
+}
+
+    .slide:nth-child(15) {
+  background: url("015_383_cumberland_2_452.jpeg") no-repeat
+    center top/cover;
+}
+
+    .slide:nth-child(16) {
+  background: url("016_383_cumberland_3_997.jpeg") no-repeat
+    center top/cover;
+}
+
+    .slide:nth-child(17) {
+  background: url("017_383_cumberland_14_394.jpeg") no-repeat
+    center top/cover;
+}
+
+    .slide:nth-child(18) {
+  background: url("018_383_cumberland_1_757.jpeg") no-repeat
+    center top/cover;
+}
+
+    .slide:nth-child(11) {
+  background: url("011_383_cumberland_11_469.jpeg") no-repeat
+    center top/cover;
+}
+
+    .slide:nth-child(19) {
+  background: url("019_383_cumberland_16_612.jpeg") no-repeat
+    center top/cover;
+}
+
+    .slide:nth-child(20) {
+  background: url("020_383_cumberland_17_21.jpeg") no-repeat
+    center top/cover;
+}
+
+    .slide:nth-child(21) {
+  background: url("021_383_cumberland_18_334.jpeg") no-repeat
+    center top/cover;
+}
+
+   .slide:nth-child(22) {
+  background: url("022_383_cumberland_19_735.jpeg") no-repeat
+    center top/cover;
+}
+
+   .slide:nth-child(23) {
+  background: url("023_383_cumberland_20_612.jpeg") no-repeat
+    center top/cover;
+}
+
+   .slide:nth-child(24) {
+  background: url("024_383_cumberland_21_700.jpeg") no-repeat
+    center top/cover;
+}
+
+   .slide:nth-child(25) {
+  background: url("025_383_cumberland_22_678.jpeg") no-repeat
+    center top/cover;
+}
+
+   .slide:nth-child(26) {
+  background: url("026_383_cumberland_23_339.jpeg") no-repeat
+    center top/cover;
+}
+
+   .slide:nth-child(27) {
+  background: url("027_383_cumberland_24_836.jpeg") no-repeat
+    center top/cover;
+}
+
+   .slide:nth-child(28) {
+  background: url("028_383_cumberland_25_419.jpeg") no-repeat
+    center top/cover;
+}
+
+  
+.buttons button#prev {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+}
+
+.buttons button#next {
+  position: absolute;
+  top: 50%;
+  right: 1rem;
+}
+
+.buttons button {
+  border: 2px solid #e5ebf3;
+  background-color: transparent;
+  color: #e5ebf3;
+  cursor: pointer;
+  padding: 13px 15px;
+  border-radius: 50%;
+  outline: none;
+}
+
+.buttons button:hover {
+  background-color: #e5ebf3;
+  color: #362a2b;
+}
+
+@media (min-width: 640px) and (min-height: 640px) {
+  .slide .content {
+    bottom: 70px;
+    left: -600px;
+    width: 600px;
+    padding: 2rem;
+    line-height: 1.6;
+  }
+
+  .slide .content h1 {
+    font-size: 2rem;
+  }
+
+  .slide.current .content {
+    transform: translateX(600px);
+  }
+}
+</style>
+</head>
+
+<body>
+  <!-- partial:index.partial.html -->
+  <div class="slider">
+    <div class="slide current"></div>
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <div class="slide"></div>
+    <div class="slide"></div>
+    
+    
+    
+    
+
+  </div>
+  <div class="buttons">
+    <button id="prev"><i class="fas fa-arrow-left"></i></button>
+    <button id="next"><i class="fas fa-arrow-right"></i></button>
+  </div>
+  <!-- partial -->
+  <script>
+    const slides = document.querySelectorAll(".slide");
+    const nextButton = document.getElementById("next");
+    const prevButton = document.getElementById("prev");
+    const auto = true;
+    const intervalTime = 5000;
+    let slideInterval;
+
+    const nextSlide = () => {
+      const current = document.querySelector(".current");
+      current.classList.remove("current");
+      if (current.nextElementSibling) {
+        current.nextElementSibling.classList.add("current");
+      } else {
+        slides[0].classList.add("current");
+      }
+    };
+
+    const prevSlide = () => {
+      const current = document.querySelector(".current");
+      current.classList.remove("current");
+      if (current.previousElementSibling) {
+        current.previousElementSibling.classList.add("current");
+      } else {
+        slides[slides.length - 1].classList.add("current");
+      }
+    };
+
+    nextButton.addEventListener("click", () => {
+      nextSlide();
+      if (auto) {
+        clearInterval(slideInterval);
+        slideInterval = setInterval(nextSlide, intervalTime);
+      }
+    });
+    prevButton.addEventListener("click", () => {
+      prevSlide();
+      if (auto) {
+        clearInterval(slideInterval);
+        slideInterval = setInterval(nextSlide, intervalTime);
+      }
+    });
+
+    if (auto) {
+      slideInterval = setInterval(nextSlide, intervalTime);
+    }
+
+  </script>
+
+</body>
+
+</html>
